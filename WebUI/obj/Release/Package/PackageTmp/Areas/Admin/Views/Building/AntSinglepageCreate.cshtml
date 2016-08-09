@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = ViewBag.title;
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+<script src="~/kindeditor/kindeditor-all-min.js"></script>
+<script src="~/kindeditor/lang/zh-CN.js"></script>
+<script>
+
+    KindEditor.ready(function (K) {
+        K.create('#ant_singlepage_content', {
+            uploadJson: '/kindeditor/asp.net/upload_json.ashx',
+            fileManagerJson: '/kindeditor/asp.net/file_manager_json.ashx',
+            allowFileManager: true,
+            afterBlur: function () { this.sync() }
+        });
+
+    });
+</script>
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+</div>
+<div class="div_right">
+    <div class="item">
+        <div class="ltitle">@ViewBag.title</div>
+
+        <div class="tishi">
+            <strong>操作说明：</strong><br />
+            <span>
+                1.可添加在线客服，访问统计，网站分享等第三方js脚本代码。支持同时使用多个代码。<br />
+                2.请尽可能添加知名度高、认可度高的第三方代码，以确保网站安全。<br />
+                3.由于添加不安全代码引起的网站访问异常、网站挂马等情况本公司概不负责。<br />
+            </span>
+        </div>
+        @using (Html.BeginForm("AntSinglepageAdd", "Building", FormMethod.Post))
+        {
+            <div class="con">
+
+                <table width="800" border="0" cellspacing="0" cellpadding="0">
+
+                    <tr>
+                        <td width="100" height="40" align="right">标题：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_singlepage_title", null, new { @style = "width:670px;" }) <font color="red">*</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" height="40" align="right">简介：</td>
+                        <td width="270">
+                            @Html.TextArea("ant_singlepage_description", new { @style = "width:670px; height:133px" })<font color="red">*</font>(最大长度20个汉字)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" height="40" align="right">描述：</td>
+                        <td width="270">
+                            @Html.TextArea("ant_singlepage_content", new { @style = "width:690px; height:433px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30">&nbsp;</td>
+                        <td height="40"><input class="btn" id="submit" type="submit" value="保　存" /></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
+                @Html.Hidden("classid")
+            </div>}
+    </div>
+</div>
+<script>
+    var ant_singlepage_title = $("#ant_singlepage_title");
+    var ant_singlepage_description = $("#ant_singlepage_description");
+    var ant_singlepage_content = $("#ant_singlepage_content");
+    submit = $("#submit");
+    submit.click(function () {
+        if (ant_singlepage_title.val() == null || ant_singlepage_title.val() == "") {
+            alert("请输入标题");
+            return false;
+        }
+
+        if (ant_singlepage_description.val() == null || ant_singlepage_description.val() == "") {
+            alert("请输入简介");
+            return false;
+        }
+
+        if (ant_singlepage_description.val().length>20) {
+            alert("最大长度20个汉字");
+            return false;
+        }
+        if (ant_singlepage_content.val() == null || ant_singlepage_content.val() == "") {
+            alert("请输入描述");
+            return false;
+        }
+    });
+
+</script>

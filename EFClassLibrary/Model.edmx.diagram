@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8cae43259495410680e8a607cc345ab9" Name="Diagram1">
+        <EntityTypeShape EntityType="D8WeChatModel.ant_admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_class" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_feedback" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_img" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_links" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_purview" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_role" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_singlepage" Width="3.125" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_trunk_content" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="D8WeChatModel.com_area" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="D8WeChatModel.com_img" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="D8WeChatModel.ant_trunk" Width="1.5" PointX="7.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

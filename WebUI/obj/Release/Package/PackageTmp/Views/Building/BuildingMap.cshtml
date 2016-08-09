@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0" />
+    <style type="text/css">
+        body, html, #container {
+            height: 100%;
+            margin: 0px;
+            font: 12px Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial;
+        }
+
+        .info-title {
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0,155,255,0.8);
+            line-height: 26px;
+            padding: 0px 0 0 6px;
+            font-weight: lighter;
+            letter-spacing: 1px;
+        }
+
+        .info-content {
+            padding: 4px;
+            color: #666666;
+            line-height: 23px;
+        }
+
+            .info-content img {
+                float: left;
+                margin: 3px;
+            }
+    </style>
+    <title>@ViewBag.ant_trunk_title </title>
+</head>
+<body>
+    <div id="container" tabindex="0"></div>
+    <div id='panel'></div>
+    @Html.Hidden("ant_trunk_title")
+    @Html.Hidden("ant_class_attribute")
+
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=d42e1a5d3378cbc5a4e822e7db7deb58&plugin=AMap.Geocoder"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script type="text/javascript">
+        var jw = document.getElementById("jw");
+        var ant_trunk_title = document.getElementById("ant_trunk_title").value;
+        var ant_class_attribute = document.getElementById("ant_class_attribute").value;
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+
+        });
+        window.onload(geocoder());
+        function geocoder() {
+            var geocoder = new AMap.Geocoder({
+                city: ant_class_attribute, //城市，默认：“全国”
+                radius: 1000 //范围，默认：500
+            });
+            //地理编码,返回地理编码结果
+            geocoder.getLocation(ant_trunk_title, function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    geocoder_CallBack(result);
+                }
+            });
+        }
+        var resultStr = "";
+        function geocoder_CallBack(data) {
+
+            //地理编码结果数组
+            var geocode = data.geocodes;
+            for (var i = 0; i < geocode.length; i++) {
+                //拼接输出html
+                resultStr += geocode[i].location.getLat() + "," + geocode[i].location.getLng();
+            }
+            window.location.href = "http://m.amap.com/?mk=" + encodeURIComponent(resultStr) + "," + encodeURIComponent(ant_trunk_title) + "&dev=1";
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="D8WeChatModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ant_admin">
+    <Key>
+      <PropertyRef Name="ant_admin_id" />
+    </Key>
+    <Property Name="ant_admin_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_admin_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ant_admin_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_admin_pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_admin_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_admin_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_admin_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_admin_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_admin_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_class">
+    <Key>
+      <PropertyRef Name="ant_class_id" />
+    </Key>
+    <Property Name="ant_class_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_class_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_class_parent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_class_attribute" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_class_stasus" Type="Int32" />
+    <Property Name="ant_class_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_class_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_class_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_class_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_feedback">
+    <Key>
+      <PropertyRef Name="ant_feedback_id" />
+    </Key>
+    <Property Name="ant_feedback_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_feedback_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_qq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_wechat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_weibo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_feedback_adddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_img">
+    <Key>
+      <PropertyRef Name="ant_img_id" />
+    </Key>
+    <Property Name="ant_img_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_img_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_fk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_img_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_img_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_links">
+    <Key>
+      <PropertyRef Name="ant_links_id" />
+    </Key>
+    <Property Name="ant_links_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_links_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_links_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_links_orders" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_links_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_links_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_links_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_links_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_links_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_purview">
+    <Key>
+      <PropertyRef Name="ant_purview_id" />
+    </Key>
+    <Property Name="ant_purview_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_purview_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ant_purview_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_purview_parent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_purview_page" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_purview_stastus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_purview_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_purview_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_purview_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_purview_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_role">
+    <Key>
+      <PropertyRef Name="ant_role_id" />
+    </Key>
+    <Property Name="ant_role_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_role_purview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_role_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_role_stastus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_role_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_role_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_role_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_role_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_singlepage">
+    <Key>
+      <PropertyRef Name="ant_singlepage_id" />
+    </Key>
+    <Property Name="ant_singlepage_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_singlepage_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_singlepage_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_editdate" Type="DateTime" Precision="3" />
+    <Property Name="ant_singlepage_stasus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_singlepage_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ant_trunk_content">
+    <Key>
+      <PropertyRef Name="ant_content_id" />
+    </Key>
+    <Property Name="ant_content_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ant_trunk_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_content_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_content_keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_content_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="D8WeChatEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ant_admin" EntityType="Self.ant_admin" />
+    <EntitySet Name="ant_class" EntityType="Self.ant_class" />
+    <EntitySet Name="ant_feedback" EntityType="Self.ant_feedback" />
+    <EntitySet Name="ant_img" EntityType="Self.ant_img" />
+    <EntitySet Name="ant_links" EntityType="Self.ant_links" />
+    <EntitySet Name="ant_purview" EntityType="Self.ant_purview" />
+    <EntitySet Name="ant_role" EntityType="Self.ant_role" />
+    <EntitySet Name="ant_singlepage" EntityType="Self.ant_singlepage" />
+    <EntitySet Name="ant_trunk_content" EntityType="Self.ant_trunk_content" />
+    <EntitySet Name="com_area" EntityType="D8WeChatModel.com_area" />
+    <EntitySet Name="com_img" EntityType="D8WeChatModel.com_img" />
+    <EntitySet Name="ant_trunk" EntityType="D8WeChatModel.ant_trunk" />
+  </EntityContainer>
+  <EntityType Name="com_area">
+    <Key>
+      <PropertyRef Name="com_area_id" />
+    </Key>
+    <Property Name="com_area_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="com_area_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_parentid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_shortname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_lng" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_lev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="com_area_sort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="com_img">
+    <Key>
+      <PropertyRef Name="com_img_id" />
+    </Key>
+    <Property Name="com_img_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_alt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_src" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_fk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_adddate" Type="DateTime" Precision="3" />
+    <Property Name="com_img_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="com_img_editdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ant_trunk">
+    <Key>
+      <PropertyRef Name="ant_trunk_id" />
+    </Key>
+    <Property Name="ant_trunk_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_entitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_class_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_content_tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_stasus" Type="Int32" />
+    <Property Name="ant_trunk_order" Type="Int32" />
+    <Property Name="ant_trunk_editdate" Type="DateTime" Precision="3" />
+    <Property Name="ant_trunk_adduser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_adddate" Type="DateTime" Precision="3" />
+    <Property Name="ant_trunk_edituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ant_trunk_area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

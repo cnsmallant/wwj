@@ -1,0 +1,76 @@
+﻿@model PagedList<EFClassLibrary.ant_singlepage>
+@using Webdiyer.WebControls.Mvc;
+
+@{
+    ViewBag.Title = ViewBag.title;
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+
+
+</div>
+<div class="div_right">
+    <div class="list" style="width:100%">
+        <div class="ltitle">@ViewBag.title</div>
+        @*<div class="lsec">
+                <div class="lsec1">
+                    @Html.DropDownList("ant_class", "按区域查询")
+                </div>
+
+            </div>*@
+        <div class="lpaixu">
+            <ul>
+                <li><a href="@Url.Action("AntSinglepage", "Building", new { classid = Request["classid"] })">刷新</a></li>
+                <li><a href="@Url.Action("AntSinglepageCreate", "Building", new { classid = Request["classid"] })">新建</a></li>
+            </ul>
+
+        </div>
+
+        <table class="tab" style="width:100%">
+            <tr class="thead">
+                <td>标题</td>
+                <td>状态</td>
+                <td>编辑人员</td>
+                <td>编辑日期</td>
+                <td>操作</td>
+            </tr>
+            <tr class="tsf">
+                <td colspan="5"></td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ant_singlepage_title</td>
+                    <td>@item.ant_singlepage_stasus</td>
+                    <td>@item.ant_singlepage_adduser</td>
+                    <td>@item.ant_singlepage_adddate</td>
+
+                    <td>
+                        <a href="@Url.Action("AntSinglepageStasus", "Building", new { ant_singlepage_id = item.ant_singlepage_id, classid = Request["classid"],ant_singlepage_stasus = Server.UrlEncode("已启用") })" sty style="color:green">启用</a>
+                        <a href="@Url.Action("AntSinglepageStasus", "Building", new { ant_singlepage_id = item.ant_singlepage_id, classid = Request["classid"], ant_singlepage_stasus = Server.UrlEncode("未启用") })"
+                           sty style="color:red" onclick="return confirm('确定要这么操作？')">禁用</a>
+                        <a href="@Url.Action("AntSinglepageModify", "Building", new { ant_singlepage_id = item.ant_singlepage_id, classid = Request["classid"] })" sty style="color:green">修改</a>
+                        <a href="@Url.Action("AntSinglepageDel", "Building", new { ant_singlepage_id = item.ant_singlepage_id, classid = Request["classid"] })" sty style="color:red" onclick="return confirm('确定要删除此信息吗？')">删除</a>
+                        <a href="@Url.Action("Index", "AntImg", new { com_img_fk = @item.ant_singlepage_id })" styl style="color:green">封面</a>
+
+                    </td>
+                </tr>
+
+            }
+
+
+            <tr class="txf">
+                <td colspan="5">
+                    <div class="fenye">
+                        @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", NumericPagerItemCount = 5, ContainerTagName = "ul", CssClass = "pagination-digg", CurrentPagerItemTemplate = "<li class='active'><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", PageIndexBoxId = "pageIndexBox", AutoHide = false })
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

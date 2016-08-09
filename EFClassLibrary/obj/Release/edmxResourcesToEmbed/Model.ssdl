@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="D8WeChatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="ant_admin">
+    <Key>
+      <PropertyRef Name="ant_admin_id" />
+    </Key>
+    <Property Name="ant_admin_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_admin_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ant_admin_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_admin_pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_admin_role" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_admin_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_admin_adddate" Type="datetime" />
+    <Property Name="ant_admin_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_admin_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_class">
+    <Key>
+      <PropertyRef Name="ant_class_id" />
+    </Key>
+    <Property Name="ant_class_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_class_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_class_parent" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_class_attribute" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_class_stasus" Type="int" />
+    <Property Name="ant_class_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_class_adddate" Type="datetime" />
+    <Property Name="ant_class_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_class_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_feedback">
+    <Key>
+      <PropertyRef Name="ant_feedback_id" />
+    </Key>
+    <Property Name="ant_feedback_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_feedback_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_content" Type="nvarchar(max)" />
+    <Property Name="ant_feedback_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_qq" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_wechat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_weibo" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_feedback_adddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_img">
+    <Key>
+      <PropertyRef Name="ant_img_id" />
+    </Key>
+    <Property Name="ant_img_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_img_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_img_alt" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_img_src" Type="nvarchar(max)" />
+    <Property Name="ant_img_fk" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_img_order" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_img_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_img_adddate" Type="datetime" />
+    <Property Name="ant_img_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_img_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_links">
+    <Key>
+      <PropertyRef Name="ant_links_id" />
+    </Key>
+    <Property Name="ant_links_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_links_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_links_url" Type="nvarchar(max)" />
+    <Property Name="ant_links_orders" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_links_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_links_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_links_adddate" Type="datetime" />
+    <Property Name="ant_links_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_links_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_purview">
+    <Key>
+      <PropertyRef Name="ant_purview_id" />
+    </Key>
+    <Property Name="ant_purview_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_purview_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ant_purview_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_purview_parent" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_purview_page" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_purview_stastus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_purview_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_purview_adddate" Type="datetime" />
+    <Property Name="ant_purview_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_purview_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_role">
+    <Key>
+      <PropertyRef Name="ant_role_id" />
+    </Key>
+    <Property Name="ant_role_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_role_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_role_purview" Type="nvarchar(max)" />
+    <Property Name="ant_role_order" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_role_stastus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_role_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_role_adddate" Type="datetime" />
+    <Property Name="ant_role_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_role_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_singlepage">
+    <Key>
+      <PropertyRef Name="ant_singlepage_id" />
+    </Key>
+    <Property Name="ant_singlepage_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_singlepage_title" Type="nvarchar(max)" />
+    <Property Name="ant_singlepage_content" Type="ntext" />
+    <Property Name="ant_singlepage_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_singlepage_stasus" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_singlepage_keywords" Type="nvarchar(max)" />
+    <Property Name="ant_singlepage_description" Type="nvarchar(max)" />
+    <Property Name="ant_singlepage_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_singlepage_adddate" Type="datetime" />
+    <Property Name="ant_singlepage_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_singlepage_editdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ant_trunk">
+    <Key>
+      <PropertyRef Name="ant_trunk_id" />
+    </Key>
+    <Property Name="ant_trunk_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_trunk_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_trunk_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_trunk_entitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_trunk_summary" Type="nvarchar(max)" />
+    <Property Name="ant_trunk_area" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_trunk_content" Type="ntext" />
+    <Property Name="ant_trunk_class_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_content_tags" Type="nvarchar(max)" />
+    <Property Name="ant_trunk_stasus" Type="int" />
+    <Property Name="ant_trunk_order" Type="int" />
+    <Property Name="ant_trunk_editdate" Type="datetime" />
+    <Property Name="ant_trunk_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_trunk_adddate" Type="datetime" />
+    <Property Name="ant_trunk_edituser" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ant_trunk_content">
+    <Key>
+      <PropertyRef Name="ant_content_id" />
+    </Key>
+    <Property Name="ant_content_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ant_trunk_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ant_content_content" Type="ntext" />
+    <Property Name="ant_content_keywords" Type="nvarchar(max)" />
+    <Property Name="ant_content_description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="com_area">
+    <Key>
+      <PropertyRef Name="com_area_id" />
+    </Key>
+    <Property Name="com_area_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="com_area_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_area_parentid" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_area_shortname" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_area_lng" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_area_lat" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_area_lev" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_area_position" Type="nvarchar(max)" />
+    <Property Name="com_area_sort" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="com_img">
+    <Key>
+      <PropertyRef Name="com_img_id" />
+    </Key>
+    <Property Name="com_img_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_img_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_img_alt" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_img_src" Type="nvarchar(max)" />
+    <Property Name="com_img_fk" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_img_adduser" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_img_adddate" Type="datetime" />
+    <Property Name="com_img_edituser" Type="nvarchar" MaxLength="50" />
+    <Property Name="com_img_editdate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="D8WeChatModelStoreContainer">
+    <EntitySet Name="ant_admin" EntityType="Self.ant_admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_class" EntityType="Self.ant_class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_feedback" EntityType="Self.ant_feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_img" EntityType="Self.ant_img" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_links" EntityType="Self.ant_links" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_purview" EntityType="Self.ant_purview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_role" EntityType="Self.ant_role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_singlepage" EntityType="Self.ant_singlepage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_trunk" EntityType="Self.ant_trunk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ant_trunk_content" EntityType="Self.ant_trunk_content" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="com_area" EntityType="Self.com_area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="com_img" EntityType="Self.com_img" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

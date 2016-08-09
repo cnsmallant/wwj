@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = ViewBag.ant_trunk_title+"图册";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="styles.css" type="text/css" rel="stylesheet" />
+
+<link href="~/photoswipe/photoswipe.css" rel="stylesheet" />
+
+<script src="~/photoswipe/lib/klass.min.js"></script>
+
+<script src="~/photoswipe/code.photoswipe-3.0.4.min.js"></script>
+
+
+<script src="/js/photoswipe.min.js"></script>
+<script src="/js/photoswipe-ui-default.min.js"></script>
+<script>
+
+    (function (window, PhotoSwipe) {
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var options = {
+                preventHide: true
+            },
+                instance = PhotoSwipe.attach(window.document.querySelectorAll('#Gallery a'), options);
+
+            instance.show(0);
+
+
+        }, false);
+
+
+    }(window, window.Code.PhotoSwipe));
+
+
+</script>
+
+<div class="container">
+    <div id="MainContent" style="z-index:9999; position:absolute;top:0px;">
+        <ul id="Gallery" class="gallery">
+            @foreach (var item in ViewBag.imglist)
+            {
+                <li><a href="@item.com_img_src"><img src="@item.com_img_src" /></a></li>
+            }
+
+        </ul>
+    </div>
+
+
+</div>

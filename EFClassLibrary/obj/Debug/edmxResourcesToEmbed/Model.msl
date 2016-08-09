@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="D8WeChatModelStoreContainer" CdmEntityContainer="D8WeChatEntities">
+    <EntitySetMapping Name="ant_admin">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_admin">
+        <MappingFragment StoreEntitySet="ant_admin">
+          <ScalarProperty Name="ant_admin_id" ColumnName="ant_admin_id" />
+          <ScalarProperty Name="ant_admin_code" ColumnName="ant_admin_code" />
+          <ScalarProperty Name="ant_admin_name" ColumnName="ant_admin_name" />
+          <ScalarProperty Name="ant_admin_pwd" ColumnName="ant_admin_pwd" />
+          <ScalarProperty Name="ant_admin_role" ColumnName="ant_admin_role" />
+          <ScalarProperty Name="ant_admin_adduser" ColumnName="ant_admin_adduser" />
+          <ScalarProperty Name="ant_admin_adddate" ColumnName="ant_admin_adddate" />
+          <ScalarProperty Name="ant_admin_edituser" ColumnName="ant_admin_edituser" />
+          <ScalarProperty Name="ant_admin_editdate" ColumnName="ant_admin_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_class">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_class">
+        <MappingFragment StoreEntitySet="ant_class">
+          <ScalarProperty Name="ant_class_id" ColumnName="ant_class_id" />
+          <ScalarProperty Name="ant_class_name" ColumnName="ant_class_name" />
+          <ScalarProperty Name="ant_class_parent" ColumnName="ant_class_parent" />
+          <ScalarProperty Name="ant_class_attribute" ColumnName="ant_class_attribute" />
+          <ScalarProperty Name="ant_class_stasus" ColumnName="ant_class_stasus" />
+          <ScalarProperty Name="ant_class_adduser" ColumnName="ant_class_adduser" />
+          <ScalarProperty Name="ant_class_adddate" ColumnName="ant_class_adddate" />
+          <ScalarProperty Name="ant_class_edituser" ColumnName="ant_class_edituser" />
+          <ScalarProperty Name="ant_class_editdate" ColumnName="ant_class_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_feedback">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_feedback">
+        <MappingFragment StoreEntitySet="ant_feedback">
+          <ScalarProperty Name="ant_feedback_id" ColumnName="ant_feedback_id" />
+          <ScalarProperty Name="ant_feedback_code" ColumnName="ant_feedback_code" />
+          <ScalarProperty Name="ant_feedback_title" ColumnName="ant_feedback_title" />
+          <ScalarProperty Name="ant_feedback_content" ColumnName="ant_feedback_content" />
+          <ScalarProperty Name="ant_feedback_name" ColumnName="ant_feedback_name" />
+          <ScalarProperty Name="ant_feedback_mail" ColumnName="ant_feedback_mail" />
+          <ScalarProperty Name="ant_feedback_tel" ColumnName="ant_feedback_tel" />
+          <ScalarProperty Name="ant_feedback_qq" ColumnName="ant_feedback_qq" />
+          <ScalarProperty Name="ant_feedback_wechat" ColumnName="ant_feedback_wechat" />
+          <ScalarProperty Name="ant_feedback_weibo" ColumnName="ant_feedback_weibo" />
+          <ScalarProperty Name="ant_feedback_adddate" ColumnName="ant_feedback_adddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_img">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_img">
+        <MappingFragment StoreEntitySet="ant_img">
+          <ScalarProperty Name="ant_img_id" ColumnName="ant_img_id" />
+          <ScalarProperty Name="ant_img_title" ColumnName="ant_img_title" />
+          <ScalarProperty Name="ant_img_alt" ColumnName="ant_img_alt" />
+          <ScalarProperty Name="ant_img_src" ColumnName="ant_img_src" />
+          <ScalarProperty Name="ant_img_fk" ColumnName="ant_img_fk" />
+          <ScalarProperty Name="ant_img_order" ColumnName="ant_img_order" />
+          <ScalarProperty Name="ant_img_adduser" ColumnName="ant_img_adduser" />
+          <ScalarProperty Name="ant_img_adddate" ColumnName="ant_img_adddate" />
+          <ScalarProperty Name="ant_img_edituser" ColumnName="ant_img_edituser" />
+          <ScalarProperty Name="ant_img_editdate" ColumnName="ant_img_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_links">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_links">
+        <MappingFragment StoreEntitySet="ant_links">
+          <ScalarProperty Name="ant_links_id" ColumnName="ant_links_id" />
+          <ScalarProperty Name="ant_links_name" ColumnName="ant_links_name" />
+          <ScalarProperty Name="ant_links_url" ColumnName="ant_links_url" />
+          <ScalarProperty Name="ant_links_orders" ColumnName="ant_links_orders" />
+          <ScalarProperty Name="ant_links_class" ColumnName="ant_links_class" />
+          <ScalarProperty Name="ant_links_adduser" ColumnName="ant_links_adduser" />
+          <ScalarProperty Name="ant_links_adddate" ColumnName="ant_links_adddate" />
+          <ScalarProperty Name="ant_links_edituser" ColumnName="ant_links_edituser" />
+          <ScalarProperty Name="ant_links_editdate" ColumnName="ant_links_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_purview">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_purview">
+        <MappingFragment StoreEntitySet="ant_purview">
+          <ScalarProperty Name="ant_purview_id" ColumnName="ant_purview_id" />
+          <ScalarProperty Name="ant_purview_code" ColumnName="ant_purview_code" />
+          <ScalarProperty Name="ant_purview_name" ColumnName="ant_purview_name" />
+          <ScalarProperty Name="ant_purview_parent" ColumnName="ant_purview_parent" />
+          <ScalarProperty Name="ant_purview_page" ColumnName="ant_purview_page" />
+          <ScalarProperty Name="ant_purview_stastus" ColumnName="ant_purview_stastus" />
+          <ScalarProperty Name="ant_purview_adduser" ColumnName="ant_purview_adduser" />
+          <ScalarProperty Name="ant_purview_adddate" ColumnName="ant_purview_adddate" />
+          <ScalarProperty Name="ant_purview_edituser" ColumnName="ant_purview_edituser" />
+          <ScalarProperty Name="ant_purview_editdate" ColumnName="ant_purview_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_role">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_role">
+        <MappingFragment StoreEntitySet="ant_role">
+          <ScalarProperty Name="ant_role_id" ColumnName="ant_role_id" />
+          <ScalarProperty Name="ant_role_name" ColumnName="ant_role_name" />
+          <ScalarProperty Name="ant_role_purview" ColumnName="ant_role_purview" />
+          <ScalarProperty Name="ant_role_order" ColumnName="ant_role_order" />
+          <ScalarProperty Name="ant_role_stastus" ColumnName="ant_role_stastus" />
+          <ScalarProperty Name="ant_role_adduser" ColumnName="ant_role_adduser" />
+          <ScalarProperty Name="ant_role_adddate" ColumnName="ant_role_adddate" />
+          <ScalarProperty Name="ant_role_edituser" ColumnName="ant_role_edituser" />
+          <ScalarProperty Name="ant_role_editdate" ColumnName="ant_role_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_singlepage">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_singlepage">
+        <MappingFragment StoreEntitySet="ant_singlepage">
+          <ScalarProperty Name="ant_singlepage_class" ColumnName="ant_singlepage_class" />
+          <ScalarProperty Name="ant_singlepage_stasus" ColumnName="ant_singlepage_stasus" />
+          <ScalarProperty Name="ant_singlepage_id" ColumnName="ant_singlepage_id" />
+          <ScalarProperty Name="ant_singlepage_title" ColumnName="ant_singlepage_title" />
+          <ScalarProperty Name="ant_singlepage_content" ColumnName="ant_singlepage_content" />
+          <ScalarProperty Name="ant_singlepage_keywords" ColumnName="ant_singlepage_keywords" />
+          <ScalarProperty Name="ant_singlepage_description" ColumnName="ant_singlepage_description" />
+          <ScalarProperty Name="ant_singlepage_adduser" ColumnName="ant_singlepage_adduser" />
+          <ScalarProperty Name="ant_singlepage_adddate" ColumnName="ant_singlepage_adddate" />
+          <ScalarProperty Name="ant_singlepage_edituser" ColumnName="ant_singlepage_edituser" />
+          <ScalarProperty Name="ant_singlepage_editdate" ColumnName="ant_singlepage_editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_trunk_content">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_trunk_content">
+        <MappingFragment StoreEntitySet="ant_trunk_content">
+          <ScalarProperty Name="ant_content_id" ColumnName="ant_content_id" />
+          <ScalarProperty Name="ant_trunk_code" ColumnName="ant_trunk_code" />
+          <ScalarProperty Name="ant_content_content" ColumnName="ant_content_content" />
+          <ScalarProperty Name="ant_content_keywords" ColumnName="ant_content_keywords" />
+          <ScalarProperty Name="ant_content_description" ColumnName="ant_content_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="com_area">
+      <EntityTypeMapping TypeName="D8WeChatModel.com_area">
+        <MappingFragment StoreEntitySet="com_area">
+          <ScalarProperty Name="com_area_sort" ColumnName="com_area_sort" />
+          <ScalarProperty Name="com_area_position" ColumnName="com_area_position" />
+          <ScalarProperty Name="com_area_lev" ColumnName="com_area_lev" />
+          <ScalarProperty Name="com_area_lat" ColumnName="com_area_lat" />
+          <ScalarProperty Name="com_area_lng" ColumnName="com_area_lng" />
+          <ScalarProperty Name="com_area_shortname" ColumnName="com_area_shortname" />
+          <ScalarProperty Name="com_area_parentid" ColumnName="com_area_parentid" />
+          <ScalarProperty Name="com_area_name" ColumnName="com_area_name" />
+          <ScalarProperty Name="com_area_id" ColumnName="com_area_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="com_img">
+      <EntityTypeMapping TypeName="D8WeChatModel.com_img">
+        <MappingFragment StoreEntitySet="com_img">
+          <ScalarProperty Name="com_img_editdate" ColumnName="com_img_editdate" />
+          <ScalarProperty Name="com_img_edituser" ColumnName="com_img_edituser" />
+          <ScalarProperty Name="com_img_adddate" ColumnName="com_img_adddate" />
+          <ScalarProperty Name="com_img_adduser" ColumnName="com_img_adduser" />
+          <ScalarProperty Name="com_img_fk" ColumnName="com_img_fk" />
+          <ScalarProperty Name="com_img_src" ColumnName="com_img_src" />
+          <ScalarProperty Name="com_img_alt" ColumnName="com_img_alt" />
+          <ScalarProperty Name="com_img_title" ColumnName="com_img_title" />
+          <ScalarProperty Name="com_img_id" ColumnName="com_img_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ant_trunk">
+      <EntityTypeMapping TypeName="D8WeChatModel.ant_trunk">
+        <MappingFragment StoreEntitySet="ant_trunk">
+          <ScalarProperty Name="ant_trunk_area" ColumnName="ant_trunk_area" />
+          <ScalarProperty Name="ant_trunk_edituser" ColumnName="ant_trunk_edituser" />
+          <ScalarProperty Name="ant_trunk_adddate" ColumnName="ant_trunk_adddate" />
+          <ScalarProperty Name="ant_trunk_adduser" ColumnName="ant_trunk_adduser" />
+          <ScalarProperty Name="ant_trunk_editdate" ColumnName="ant_trunk_editdate" />
+          <ScalarProperty Name="ant_trunk_order" ColumnName="ant_trunk_order" />
+          <ScalarProperty Name="ant_trunk_stasus" ColumnName="ant_trunk_stasus" />
+          <ScalarProperty Name="ant_content_tags" ColumnName="ant_content_tags" />
+          <ScalarProperty Name="ant_trunk_class_id" ColumnName="ant_trunk_class_id" />
+          <ScalarProperty Name="ant_trunk_content" ColumnName="ant_trunk_content" />
+          <ScalarProperty Name="ant_trunk_summary" ColumnName="ant_trunk_summary" />
+          <ScalarProperty Name="ant_trunk_entitle" ColumnName="ant_trunk_entitle" />
+          <ScalarProperty Name="ant_trunk_title" ColumnName="ant_trunk_title" />
+          <ScalarProperty Name="ant_trunk_code" ColumnName="ant_trunk_code" />
+          <ScalarProperty Name="ant_trunk_id" ColumnName="ant_trunk_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

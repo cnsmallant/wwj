@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "修改建筑";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+<script src="~/My97DatePicker/WdatePicker.js"></script>
+<script src="~/kindeditor/kindeditor-all-min.js"></script>
+<script src="~/kindeditor/lang/zh-CN.js"></script>
+<script>
+
+    KindEditor.ready(function (K) {
+        K.create('#ant_trunk_content', {
+            uploadJson: '/kindeditor/asp.net/upload_json.ashx',
+            fileManagerJson: '/kindeditor/asp.net/file_manager_json.ashx',
+            allowFileManager: true,
+            afterBlur: function () { this.sync() }
+        });
+
+    });
+</script>
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+</div>
+<div class="div_right">
+    <div class="item">
+        <div class="ltitle">修改建筑</div>
+
+        <div class="tishi">
+            <strong>操作说明：</strong><br />
+            <span>
+                1.可添加在线客服，访问统计，网站分享等第三方js脚本代码。支持同时使用多个代码。<br />
+                2.请尽可能添加知名度高、认可度高的第三方代码，以确保网站安全。<br />
+                3.由于添加不安全代码引起的网站访问异常、网站挂马等情况本公司概不负责。<br />
+            </span>
+        </div>
+        @using (Html.BeginForm("BuildingEdit", "Building", FormMethod.Post))
+        {
+            <div class="con">
+
+                <table width="800" border="0" cellspacing="0" cellpadding="0">
+
+                    <tr>
+                        <td width="100" height="40" align="right">建筑区域：</td>
+                        <td width="270">
+                            @Html.DropDownList("ant_class", "请选择") <font color="red">*</font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="100" height="40" align="right">保护级别：</td>
+                        <td width="400px">
+                            @Html.TextBox("ant_trunk_area") <font color="red">*</font> 选择级别：
+                            <a href="javascript:;" style="color:green" id="g">全国重点文物保护单位
+                            </a><a href="javascript:;" style="color:green" id="s">省级文物保护单位
+                            </a><a href="javascript:;" style="color:green" id="c">市级文物保护单位
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" height="40" align="right">建筑编号：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_trunk_code")<font color="red">*</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" height="40" align="right">中文名称：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_trunk_title", null, new { @style = "width:675px;" }) <font color="red">*</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" height="40" align="right">外文名称：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_trunk_entitle", null, new { @style = "width:675px;", @onkeyup = "this.value=value.replace(/[/W]/g,'') " }) <font color="red">*</font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="100" height="40" align="right">建筑地址：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_trunk_summary", null, new { @style = "width:675px;" }) <font color="red">*</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="100" height="40" align="right">建造时间：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_content_tags") <font color="red">*</font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="100" height="40" align="right">建筑序号：</td>
+                        <td width="270">
+                            @Html.TextBox("ant_trunk_order", null, new { onkeyup = "this.value=this.value.replace(/[^0-9]/g,'')" }) <font color="red">*</font>（必须为正整数，数值越小越靠前）
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="100" height="40" align="right">建筑描述：</td>
+                        <td width="270">
+                            @Html.TextArea("ant_trunk_content", new { @style = "width:690px; height:433px" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30">&nbsp;</td>
+                        <td height="40">
+                            @{
+
+            if (string.IsNullOrEmpty(Request["ck"]))
+            {
+                <input class="btn" id="submit" type="submit" value="保　存" />
+            }
+                            }
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+                @Html.Hidden("ant_trunk_class_id")
+                @Html.Hidden("ant_trunk_id")
+            </div>}
+    </div>
+</div>
+<script>
+    var g = $("#g");
+    var s = $("#s");
+    var c = $("#c");
+    var ant_class = $("#ant_class");
+    var ant_trunk_class_id = $("#ant_trunk_class_id");
+    var ant_trunk_code = $("#ant_trunk_code");
+    var ant_trunk_title = $("#ant_trunk_title");
+    var ant_trunk_entitle = $("#ant_trunk_entitle");
+    var ant_trunk_summary = $("#ant_trunk_summary");
+    var ant_content_tags = $("#ant_content_tags");
+    var ant_trunk_area = $("#ant_trunk_area");
+    var ant_trunk_order = $("#ant_trunk_order");
+    var ant_trunk_content = $("#ant_trunk_content");
+    var submit = $("#submit");
+    var flg = false;
+    ant_class.change(function () {
+        if (ant_class.find("option:selected").text() == "请选择") {
+            flg = false;
+        } else {
+            var ro = ant_class.find("option:selected").val();
+
+            ant_trunk_class_id.val(ro);
+            flg = true;
+        }
+    });
+    g.click(function () {
+        ant_trunk_area.val(g.text());
+    });
+    s.click(function () {
+        ant_trunk_area.val(s.text());
+    });
+    c.click(function () {
+        ant_trunk_area.val(c.text());
+    });
+    submit.click(function () {
+
+        if (ant_trunk_code.val() == null || ant_trunk_code.val() == "") {
+            alert("请输入建筑编号");
+            return false;
+        }
+        if (ant_trunk_area.val() == null || ant_trunk_area.val() == "") {
+            alert("请输入保护级别");
+            return false;
+        }
+        if (ant_trunk_title.val() == null || ant_trunk_title.val() == "") {
+            alert("请输入中文名称");
+            return false;
+        }
+        //if (ant_trunk_entitle.val() == null || ant_trunk_entitle.val() == "") {
+        //    alert("请输入外文名称");
+        //    return false;
+        //}
+        if (ant_content_tags.val() == null || ant_content_tags.val() == "") {
+            alert("请输入建筑地址");
+            return false;
+        }
+        if (ant_trunk_code.val() == null || ant_trunk_code.val() == "") {
+            alert("请输入建造时间");
+            return false;
+        }
+
+        if (ant_trunk_order.val() == null || ant_trunk_order.val() == "") {
+            alert("请输入建筑序号");
+            return false;
+        }
+        if (ant_trunk_content.val() == null || ant_trunk_content.val() == "") {
+            alert("请输入建筑描述");
+            return false;
+        }
+    });
+
+</script>

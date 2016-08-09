@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0,maximum-scale=1.0" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- 适应移动端end -->
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/css.css" rel="stylesheet" />
+    <script src="~/js/jquery-2.1.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>
+<script>
+
+    $(function () {
+        window.addEventListener('orientationchange', function (event) {
+            //if (window.orientation == 180 || window.orientation == 0) {
+            //    alert("竖屏");
+            //}
+            if (window.orientation == 90 || window.orientation == -90) {
+                alert("请用竖屏体验最佳浏览效果！");
+            }
+        });
+
+    });
+</script>

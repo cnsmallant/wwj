@@ -1,0 +1,66 @@
+﻿@model PagedList<EFClassLibrary.ant_feedback>
+@using Webdiyer.WebControls.Mvc;
+@{
+    ViewBag.Title = "意见反馈";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+
+
+</div>
+<div class="div_right">
+    <div class="list" style="width:100%">
+        <div class="ltitle">@ViewBag.title</div>
+        @*<div class="lsec">
+                <div class="lsec1">
+                    @Html.DropDownList("ant_class", "按区域查询")
+                </div>
+
+            </div>*@
+        <div class="lpaixu">
+            <ul>
+                @*<li><a href="@Url.Action("AntSinglepage", "Building", new { classid = Request["classid"] })">刷新</a></li>
+                    <li><a href="@Url.Action("AntSinglepageCreate", "Building", new { classid = Request["classid"] })">新建</a></li>*@
+            </ul>
+
+        </div>
+
+        <table class="tab" style="width:100%">
+            <tr class="thead">
+                <td>联系姓名</td>
+                <td>联系方式</td>
+                <td>反馈内容</td>
+                <td>反馈日期</td>
+                <td>操作</td>
+            </tr>
+            <tr class="tsf">
+                <td colspan="5"></td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ant_feedback_name</td>
+                    <td>@item.ant_feedback_tel</td>
+                    <td>@item.ant_feedback_content</td>
+                    <td>@item.ant_feedback_adddate</td>
+                    <td>
+                        <a href="@Url.Action("FeedbackDel", "Building", new { ant_feedback_id = item.ant_feedback_id })" sty style="color:red" onclick="return confirm('确定要删除此信息吗？')">删除</a>
+                    </td>
+                </tr>
+
+            }
+            <tr class="txf">
+                <td colspan="5">
+                    <div class="fenye">
+                        @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", NumericPagerItemCount = 5, ContainerTagName = "ul", CssClass = "pagination-digg", CurrentPagerItemTemplate = "<li class='active'><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", PageIndexBoxId = "pageIndexBox", AutoHide = false })
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

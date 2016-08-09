@@ -1,0 +1,30 @@
+﻿<div class="left">
+    <ul>
+        <li>
+            <a>o&nbsp;建筑管理</a>
+            <ul>
+                <li><a href="@Url.Action("BuildingArea", "Building")">●&nbsp;建筑区域</a></li>
+                <li><a href="@Url.Action("BuildingList", "Building")">●&nbsp;建筑列表</a></li>
+                <li><a href="@Url.Action("AntSinglepage", "Building", new { classid = "culture" })">●&nbsp;建筑文化</a></li>
+                <li><a href='@Url.Action("AntSinglepage", "Building", new { classid = "news" })'>●&nbsp;建筑资讯</a></li>
+                <li><a href='@Url.Action("AntSinglepage", "Building", new { classid = "line" })'>●&nbsp;推荐路线</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>o&nbsp;其他管理</a>
+            <ul>
+                <li><a href='@Url.Action("AntSinglepageContactUs", "Building")'>●&nbsp;服务热线</a></li>
+                <li><a href='@Url.Action("Feedback", "Building")'>●&nbsp;意见反馈</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>o&nbsp;Banner管理</a>
+            <ul>
+                <li><a href="@Url.Action("Index", "AntImg", new { com_img_fk = "JZWH" })">●&nbsp;建筑文化</a></li>
+                <li><a href="@Url.Action("Index", "AntImg", new { com_img_fk = "JZZX" })">●&nbsp;建筑资讯</a></li>
+                <li><a href="@Url.Action("Index", "AntImg", new { com_img_fk = "TJLX" })">●&nbsp;推荐路线</a></li>
+                <li><a href="@Url.Action("Index", "AntImg", new { com_img_fk = "YJFK" })">●&nbsp;意见反馈</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

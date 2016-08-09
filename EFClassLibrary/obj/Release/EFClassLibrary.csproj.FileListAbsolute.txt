@@ -1,0 +1,9 @@
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Release\EFClassLibrary.dll.config
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Release\EFClassLibrary.dll
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Release\EFClassLibrary.pdb
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Release\EntityFramework.dll
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Release\EntityFramework.xml
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Release\zh-Hans\EntityFramework.resources.dll
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\obj\Release\EFClassLibrary.csprojResolveAssemblyReference.cache
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\obj\Release\EFClassLibrary.dll
+G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\obj\Release\EFClassLibrary.pdb

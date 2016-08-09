@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "意见反馈";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <img src="@ViewBag.com_img_src" style="width:100%;height:150px;" />
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12" style="margin-top:50px; line-height:30px;">
+            <span class="pull-left" style=" color:#503729;font-size:16px; font-family:SimHei">姓名：</span>
+            <span class="pull-left">@Html.TextBox("ant_feedback_name", null, new { @style = "width:130%", @placeholder = "请输入您的联系姓名", @class = "Feedback_input" })</span>
+        </div>
+        <div class="col-lg-12" style="margin-top:50px; line-height:30px;">
+            <span class="pull-left" style=" color:#503729;font-size:16px; font-family:SimHei">联系：</span>
+            <span class="pull-left">@Html.TextBox("ant_feedback_tel", null, new { @style = "width:130%", @placeholder = "QQ、邮箱、电话", @class = "Feedback_input" })</span>
+        </div>
+        <div class="col-lg-12" style="margin-top:50px; line-height:30px;">
+            <span class="pull-left" style=" color:#503729;font-size:16px; font-family:SimHei">意见：</span>
+            <span class="pull-left">@Html.TextArea("ant_feedback_content", new { @style = "height:100px; width:135%", @placeholder = "您要反馈的内容", @class = "Feedback_inputs" }) 
+            <button id="submit" style="height:35px; background-color:#503729;color:#fff; display:block;font-size:16px; padding:8px; text-decoration:none; width:135%; border:0px; color:#fff;;" type="submit">提交</button></span>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var ant_feedback_name = $("#ant_feedback_name");
+    var ant_feedback_tel = $("#ant_feedback_tel");
+    var ant_feedback_content = $("#ant_feedback_content");
+    var submit = $("#submit");
+    submit.click(function () {
+        if (ant_feedback_name.val() == "" || ant_feedback_name.val() == null) {
+            alert("请输入姓名");
+        } else if (ant_feedback_tel.val() == "" || ant_feedback_tel.val() == null) {
+            alert("请输入联系方式");
+        } else if (ant_feedback_content.val() == "" || ant_feedback_content.val() == null) {
+            alert("请输入意见");
+        } else {
+
+            $.ajax({
+                url: "/FeedBack/FeedBackAdd",
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(
+                    {
+                        ant_feedback_name: ant_feedback_name.val(),
+                        ant_feedback_tel: ant_feedback_tel.val(),
+                        ant_feedback_content: ant_feedback_content.val()
+                    }),
+                dataType: "JSON",
+                success: function (data) {
+                    if (data == "NO") {
+                        alert("操作失败！");
+                        return;
+                    } else if (data == "OK") {
+                        alert("提交成功！");
+                        window.location.href = "/Building/";
+                        return;
+                    }
+                }
+            });
+        }
+    });
+
+
+</script>

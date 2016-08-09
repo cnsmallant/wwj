@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "管理员列表";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+
+
+</div>
+<div class="div_right">
+    <div class="list" style="width:100%">
+        <div class="ltitle">管理人员</div>
+
+        <div class="lpaixu">
+            <ul>
+
+                <li style="width:100%">状态说明：0-超级管理员&nbsp;1-普通管理员&nbsp;-1-禁用人员</li>
+            </ul>
+
+        </div>
+
+        <table class="tab" style="width:100%">
+            <tr class="thead">
+                <td>管理人员</td>
+                <td>人员状态</td>
+                <td>编辑日期</td>
+                <td>操作</td>
+            </tr>
+            <tr class="tsf">
+                <td colspan="6"></td>
+            </tr>
+
+            @foreach (var item in ViewBag.list)
+            {
+                <tr>
+                    <td>@item.ant_admin_name</td>
+                    <td>@item.ant_admin_role</td>
+                    <td>@item.ant_admin_adddate</td>
+                    <td>
+                        <a href="@Url.Action("UserRole", "Home", new { ant_admin_id = @item.ant_admin_id,ant_admin_role=1 })" st style="color:green">启用</a>
+                        <a href="@Url.Action("UserRole", "Home", new { ant_admin_id = @item.ant_admin_id,ant_admin_role= -1})" st style="color:red" onclick="return confirm('确定要这么操作？')">禁用</a>
+                        <a href="@Url.Action("UserRole", "Home", new { ant_admin_id = @item.ant_admin_id,ant_admin_role=0 })" st style="color:purple" onclick="return confirm('确定要这么操作？')">设置为超级管理员</a>
+                    </td>
+                </tr>
+
+            }
+
+
+            <tr class="txf">
+                <td colspan="6">
+                    <div class="fenye">
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

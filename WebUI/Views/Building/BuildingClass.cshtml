@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = ViewBag.title;
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="Building_content">
+            <div class="Building_leftmenu" id="Building_leftmenu">
+                @foreach (var item in ViewBag.classlist)
+                {
+                    <div name="Building_leftmenu_class" class="Building_leftmenu_class">
+                        <a href="@Url.Action("BuildingClass", "Building", new { id = item.ant_class_id })" style="color:#503729;text-decoration:none">
+                            <p><img src="@item.com_img_src" style="height:50px; width:50px; border-radius:25px" /></p>
+                            <p>@item.ant_class_name</p>
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="Building_rightmenu">
+                <div class="Building_search">
+                    <div class="Building_search_btn">
+                        <a class="glyphicon glyphicon-search" id="search" href="javascript:;"></a>
+                    </div>
+                    <div class="Building_search_input">
+                        <input id="searchvalue" placeholder="请输入建筑名称或门牌号" />
+                    </div>
+                </div>
+                <div class="Building_rightmenu_list">
+                    <div id="container">
+                        @foreach (var item in ViewBag.trlist)
+                        {
+                            <div style='float:left; width:100%;padding:10px;'>  <a href='/Building/BuildingDetailes/@item.ant_trunk_id' style='color:#503729'><div class='pull-left'><img src='/images/book_icon.png' style='width:20px;margin-top:4px;' /></div> <div class='pull-left'>  <span style='font-size:18px;margin-left:5px; font-family:SimHei'>@item.ant_trunk_title</span></div></a> </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Hidden("classid")
+</div>
+
+<script>
+    var search = $("#search");
+    var searchvalue = $("#searchvalue");
+    $(function () {
+        var myA = document.getElementById("Building_leftmenu").getElementsByTagName("a");
+        var myDiv = document.getElementById("Building_leftmenu").getElementsByTagName("div");
+        var myURL = document.location.href;
+        for (var i = 0; i < myA.length; i++) {
+            var links = myA[i].getAttribute("href");
+            if (myURL.indexOf(links) != -1) {
+                myDiv[i].setAttribute("class", "Building_leftmenu_class cur");
+            }
+        }
+    });
+    search.click(function () {
+        window.location.href = "/Building/BuildingSearch/" + encodeURIComponent(searchvalue.val());
+    });
+</script>

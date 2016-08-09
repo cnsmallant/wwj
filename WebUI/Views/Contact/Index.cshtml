@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "服务热线";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row" style="background-color:#e3dfd4">
+        <div style="width:100%;height:100%; overflow:hidden;z-index:-1">
+            <img src="/images/contactus.png" style="width: 100%; height: 100%;" />
+        </div>
+
+        <div style="position:fixed; top:20px; color:#503729;width:100%;z-index:99; padding:10px;">
+
+
+
+            <div style="margin-left:5px; border:2px solid #9c867a; height:240px; width:90%;z-index:999; position:absolute; line-height:15px;">
+
+                <p class="text-center" style="font-family:SimHei; font-size:20px; margin-top:15px;">联系我们</p>
+                <p class="text-center" style="font-family:Aparajita_Italic; font-size:22px;">Contact us</p>
+
+                <span class="text-center">
+                    <img src="/images/pattern_icon.png" style="height:15px;" />
+                </span>
+                <div style="width:100%; float:left;margin-top:15px;">
+                    <div class="pull-left">
+                        <span class=" pull-left circle" style="margin-left:5px; color:#988175">
+                            <span class="glyphicon glyphicon-earphone" style="font-size:14px; margin-left:7px; margin-top:7px;"> </span>
+                        </span>
+                    </div>
+                    <div class=" pull-left" style="margin-top:6px; margin-left:5px; color:#5a4337"><span>电话：@ViewBag.ant_singlepage_title</span></div>
+                </div>
+                <div style="width:100%; float:left;margin-top:15px;">
+                    <div class="pull-left">
+                        <span class=" pull-left circle" style="margin-left:5px; color:#988175">
+                            <span class="glyphicon glyphicon-print" style="font-size:14px; margin-left:7px; margin-top:7px;"> </span>
+                        </span>
+                    </div>
+                    <div class=" pull-left" style="margin-top:6px; margin-left:5px; color:#5a4337"><span>传真：@ViewBag.ant_singlepage_content</span></div>
+                </div>
+                <div style="width:100%; float:left;margin-top:15px;">
+                    <div class="pull-left">
+                        <span class=" pull-left circle" style="margin-left:5px; color:#988175">
+                            <span class="glyphicon glyphicon-envelope" style="font-size:14px; margin-left:7px; margin-top:7px;"> </span>
+                        </span>
+                    </div>
+                    <div class=" pull-left" style="margin-top:6px; margin-left:5px; color:#5a4337;text-align:right"><span>邮箱：<a href="mailto:@ViewBag.ant_singlepage_description">@ViewBag.ant_singlepage_description</a></span></div>
+                </div>
+
+            </div>
+
+            <div class="ContactMask">
+            </div>
+
+        </div>
+    </div>
+
+</div>

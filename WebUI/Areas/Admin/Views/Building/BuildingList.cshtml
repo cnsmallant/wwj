@@ -1,0 +1,102 @@
+﻿@model PagedList<WebUI.Areas.Admin.Controllers.BuildingController.ant_trunks>
+@using Webdiyer.WebControls.Mvc;
+
+@{
+    ViewBag.Title = "建筑列表";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+
+
+</div>
+<div class="div_right">
+    <div class="list" style="width:100%">
+        <div class="ltitle">建筑列表</div>
+        <div class="lsec">
+            <div class="lsec1">
+                @Html.DropDownList("ant_class", "按区域查询")
+            </div>
+
+        </div>
+        <div class="lpaixu">
+            <ul>
+                <li><a href="@Url.Action("BuildingList", "Building")">刷新</a></li>
+                <li><a href="@Url.Action("BuildingCreate", "Building")">新建建筑</a></li>
+            </ul>
+
+        </div>
+
+        <table class="tab" style="width:100%">
+            <tr class="thead">
+                <td>建筑编号</td>
+                <td>建筑名称</td>
+                <td>英文名称</td>
+                <td>所属区域</td>
+                <td>建造时间</td>
+                <td>建筑面积</td>
+                <td>建筑地址</td>
+                <td>建筑状态</td>
+                <td>编辑人员</td>
+                <td>编辑日期</td>
+                <td>操作</td>
+            </tr>
+            <tr class="tsf">
+                <td colspan="11"></td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ant_trunk_code</td>
+                    <td>@item.ant_trunk_title</td>
+                    <td>@item.ant_trunk_entitle</td>
+                    <td>@item.ant_trunk_class_id</td>
+                    <td>@item.ant_content_tags</td>
+                    <td>@item.ant_trunk_area</td>
+                    <td>@item.ant_trunk_summary</td>
+                    <td>@item.ant_trunk_stasuses</td>
+                    <td>@item.ant_trunk_adduser</td>
+                    <td>@item.ant_trunk_adddate</td>
+                    <td>
+                        <a href="@Url.Action("BuildingModify", "Building", new { ant_trunk_id = item.ant_trunk_id,ck="ck" })" sty style="color:green">查看</a>
+                        <a href="@Url.Action("BuildingStasus", "Building", new { ant_trunk_id = item.ant_trunk_id, ant_trunk_stasus = 1 })" sty style="color:green">启用</a>
+                        <a href="@Url.Action("BuildingStasus", "Building", new { ant_trunk_id = item.ant_trunk_id, ant_trunk_stasus = 0 })" sty style="color:red" onclick="return confirm('确定要这么操作？')">禁用</a>
+                        <a href="@Url.Action("BuildingStasus", "Building", new { ant_trunk_id = item.ant_trunk_id, ant_trunk_stasus = 2 })" sty style="color:green">推荐</a>
+                        <a href="@Url.Action("BuildingStasus", "Building", new { ant_trunk_id = item.ant_trunk_id, ant_trunk_stasus = 1 })" sty style="color:red" onclick="return confirm('确定要这么操作？')">禁推</a>
+                        <a href="@Url.Action("BuildingModify", "Building", new { ant_trunk_id = item.ant_trunk_id })" sty style="color:green">修改</a>
+                        <a href="@Url.Action("BuildingDel", "Building", new { ant_trunk_id = item.ant_trunk_id })" sty style="color:red" onclick="return confirm('确定要删除此信息吗？')">删除</a>
+                        <a href="@Url.Action("Index", "AntImg", new { com_img_fk = @item.ant_trunk_id })" styl style="color:green">图册</a>
+                    </td>
+                </tr>
+
+            }
+
+
+            <tr class="txf">
+                <td colspan="11">
+                    <div class="fenye">
+                        @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageid", NumericPagerItemCount = 5, ContainerTagName = "ul", CssClass = "pagination-digg", CurrentPagerItemTemplate = "<li class='active'><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", PageIndexBoxId = "pageIndexBox", AutoHide = false })
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    var ant_class = $("#ant_class");
+    $(function () {
+        ant_class.change(function () {
+            if (ant_class.find("option:selected").text() == "按区域查询") {
+                window.location.href = "/Admin/Building/BuildingList";
+            } else {
+                var ro = ant_class.find("option:selected").val();
+                window.location.href = "/Admin/Building/BuildingClass?classid=" + ro;
+            }
+        });
+    });
+
+</script>

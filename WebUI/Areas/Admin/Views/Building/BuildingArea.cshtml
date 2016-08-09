@@ -1,0 +1,69 @@
+﻿@using EFClassLibrary
+
+@{
+    ViewBag.Title = "建筑区域";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="div_left">
+    <div class="left">
+        @Html.Partial("LeftPartialPage")
+    </div>
+
+
+</div>
+<div class="div_right">
+    <div class="list" style="width:100%">
+        <div class="ltitle">建筑区域</div>
+
+        <div class="lpaixu">
+            <ul>
+
+                <li><a href="@Url.Action("BuildingAreaCreate", "Building")">新建建筑区域</a></li>
+            </ul>
+
+        </div>
+
+        <table class="tab" style="width:100%">
+            <tr class="thead">
+                <td>区域图标</td>
+                <td>区域名称</td>
+                <td>区域经纬</td>
+                <td>编辑人员</td>
+                <td>编辑日期</td>
+                <td>操作</td>
+            </tr>
+            <tr class="tsf">
+                <td colspan="6"></td>
+            </tr>
+
+            @foreach (var item in ViewBag.list)
+            {
+                <tr>
+                    <td>
+                        <img style="width:80px" src="@item.com_img_src" />
+                    </td>
+                    <td>@item.ant_class_name</td>
+                    <td>@item.ant_class_attribute</td>
+                    <td>@item.ant_class_adduser</td>
+                    <td>@item.ant_class_adddate</td>
+                    <td>
+                        <a href="@Url.Action("BuildingAreaModify", "Building", new { ant_class_id = @item.ant_class_id })" st style="color:green">修改</a>
+                        <a href="@Url.Action("BuildingAreaDel", "Building", new { ant_class_id = @item.ant_class_id })" st style="color:red" onclick="return confirm('确定要删除此信息吗？')">删除</a>
+                        <a href="@Url.Action("UploadImage", "AntImg", new { com_img_fk = @item.ant_class_id })" styl style="color:green">上传图标</a>
+                        <a href="@Url.Action("Index", "AntImg", new { com_img_fk = @item.ant_class_id })" styl style="color:green">查看图标</a>
+                    </td>
+                </tr>
+
+            }
+
+
+            <tr class="txf">
+                <td colspan="6">
+                    <div class="fenye">
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

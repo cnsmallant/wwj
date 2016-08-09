@@ -1,0 +1,32 @@
+﻿@using EFClassLibrary
+<div class="left">
+    <ul>
+        <li>
+            <a>o&nbsp;个人操作</a>
+            <ul>
+                <li><a href="@Url.Action("UserPwd", "Home")">●&nbsp;修改密码</a></li>
+
+            </ul>
+        </li>
+
+        @{
+
+            D8WeChatEntities db = new D8WeChatEntities();
+            var uname = TDESHelper.DecryptString(Request.Cookies["uname"].Value);
+            var upwd = Request.Cookies["upwd"].Value;
+            var ant_admin = db.ant_admin.Where(u => u.ant_admin_name == uname & u.ant_admin_pwd == upwd).SingleOrDefault();
+            if (ant_admin.ant_admin_role == "0")
+            {
+                <li>
+
+                    <a>o&nbsp;管理员操作</a>
+                    <ul>
+                        <li><a href='@Url.Action("Users", "Home")'>●&nbsp;查看管理员</a></li>
+                        <li><a href='@Url.Action("UserAdd", "Home")'>●&nbsp;分配管理员</a></li>
+                    </ul>
+                </li>
+
+            }
+        }
+    </ul>
+</div>
