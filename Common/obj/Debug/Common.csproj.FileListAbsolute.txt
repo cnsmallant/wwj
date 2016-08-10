@@ -59,3 +59,14 @@ G:\XUTAO\W_文物局\D8WeChat\Common\obj\Debug\Common.pdb
 G:\XUTAO\W_文物局\D8WeChat\Common\bin\Debug\Webdiyer.MvcPager.resources.dll
 G:\XUTAO\W_文物局\D8WeChat\Common\bin\Debug\EntityFramework.xml
 G:\XUTAO\W_文物局\D8WeChat\Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\GitHub\wwj\wwj\Common\bin\Debug\Common.dll
+D:\GitHub\wwj\wwj\Common\bin\Debug\Common.pdb
+D:\GitHub\wwj\wwj\Common\bin\Debug\EFClassLibrary.dll
+D:\GitHub\wwj\wwj\Common\bin\Debug\EntityFramework.dll
+D:\GitHub\wwj\wwj\Common\bin\Debug\Webdiyer.MvcPager.resources.dll
+D:\GitHub\wwj\wwj\Common\bin\Debug\EFClassLibrary.pdb
+D:\GitHub\wwj\wwj\Common\bin\Debug\EntityFramework.xml
+D:\GitHub\wwj\wwj\Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\GitHub\wwj\wwj\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\GitHub\wwj\wwj\Common\obj\Debug\Common.dll
+D:\GitHub\wwj\wwj\Common\obj\Debug\Common.pdb

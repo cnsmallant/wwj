@@ -15,3 +15,11 @@ G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\bin\Debug\zh-Hans\EntityFramework.r
 G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\obj\Debug\EFClassLibrary.dll
 G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\obj\Debug\EFClassLibrary.pdb
 G:\XUTAO\W_文物局\D8WeChat\EFClassLibrary\obj\Debug\EFClassLibrary.csprojResolveAssemblyReference.cache
+D:\GitHub\wwj\wwj\EFClassLibrary\bin\Debug\EFClassLibrary.dll.config
+D:\GitHub\wwj\wwj\EFClassLibrary\bin\Debug\EFClassLibrary.dll
+D:\GitHub\wwj\wwj\EFClassLibrary\bin\Debug\EFClassLibrary.pdb
+D:\GitHub\wwj\wwj\EFClassLibrary\bin\Debug\EntityFramework.dll
+D:\GitHub\wwj\wwj\EFClassLibrary\bin\Debug\EntityFramework.xml
+D:\GitHub\wwj\wwj\EFClassLibrary\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\GitHub\wwj\wwj\EFClassLibrary\obj\Debug\EFClassLibrary.dll
+D:\GitHub\wwj\wwj\EFClassLibrary\obj\Debug\EFClassLibrary.pdb
